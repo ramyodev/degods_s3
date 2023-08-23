@@ -10,13 +10,13 @@ const BaseComponent: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-black">
-      <div className="flex flex-col items-center space-y-8 bg-white p-8 rounded-lg shadow-xl">
-        <Logo />
-        <div className="flex space-x-8">
+      <div className="flex flex-col items-center space-y-8 md:space-y-8 bg-white p-8 md:p-10 rounded-lg shadow-xl max-w-4xl">
+        <Logo className="w-32 md:w-48 h-32 md:h-48" />
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 w-full">
           <TraitSelector setSelectedTraits={setSelectedTraits} />
           <NFTDisplay selectedTraits={selectedTraits} />
         </div>
-        <span className='text-black text-xs'>Coded by <a target='blank' className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600' href="https://twitter.com/0xRamyo">@0xRamyo</a> (not affiliated with the Degods Team)</span>
+        <span className='text-black text-xs text-center'>Coded by <a href="https://twitter.com/0xRamyo">@0xRamyo</a> (not affiliated with the Degods Team)</span>
       </div>
     </div>
   );
