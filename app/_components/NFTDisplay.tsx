@@ -6,6 +6,8 @@ interface NFTDisplayProps {
 }
 
 let isCanvasScaled = false;
+let offScreenCanvas: HTMLCanvasElement | null = null;
+let offScreenCtx: CanvasRenderingContext2D | null = null;
 
 const setupCanvasForHighDPI = (canvas: HTMLCanvasElement) => {
     if (isCanvasScaled) return; // Exit if the canvas has already been scaled
@@ -42,7 +44,7 @@ const NFTDisplay: React.FC<NFTDisplayProps> = ({ selectedTraits }) => {
   const handleDownload = () => {
     if (offScreenCanvas) {
         // Convert off-screen canvas content to an image (data URL)
-        const dataURL = offScreenCanvas.toDataURL('image/png');
+        const dataURL = offScreenCanvas?.toDataURL('image/png');
 
         // Create a temporary anchor element to trigger the download
         const downloadLink = document.createElement('a');
@@ -74,9 +76,6 @@ useEffect(() => {
   }
 }, []);
 
-
-let offScreenCanvas: HTMLCanvasElement | null = null;
-let offScreenCtx: CanvasRenderingContext2D | null = null;
 
 
 const handleGenerate = async () => {
