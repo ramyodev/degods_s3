@@ -10,9 +10,9 @@ const BaseComponent: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-black">
-      <div className="flex flex-col items-center space-y-8 md:space-y-8 bg-white p-8 md:p-10 rounded-lg shadow-xl max-w-4xl">
+      <div className="flex flex-col items-center space-y-4 sm:space-y-8 md:space-y-8 bg-white p-4 sm:p-8 md:p-10 rounded-lg shadow-xl max-w-4xl">
         <Logo />
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 w-full">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 md:space-x-8 w-full">
           <TraitSelector setSelectedTraits={setSelectedTraits} />
           <NFTDisplay selectedTraits={selectedTraits} />
         </div>
