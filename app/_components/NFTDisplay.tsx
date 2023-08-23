@@ -124,19 +124,19 @@ const handleGenerate = async () => {
 };
 
 
-  return (
-    <div className="flex flex-col items-center space-y-4">
-      <canvas ref={canvasRef} width={400} height={400} className="border"></canvas>
-      <div className="flex space-x-4">
-        <button onClick={handleGenerate} className="bg-blue-600 text-white px-4 py-2 rounded">
-          Generate
-        </button>
-        <button onClick={handleDownload} className="bg-indigo-600 text-white px-4 py-2 rounded">
-          Download
-        </button>
-      </div>
+return (
+  <div className="flex flex-col items-center space-y-4">
+    <canvas ref={canvasRef} width={400} height={400} className="border transform scale-75 sm:scale-100"></canvas>
+    <div className="flex space-x-4">
+      <button onClick={handleGenerate} className="bg-blue-600 text-white px-4 py-2 rounded">
+        Generate
+      </button>
+      <button onClick={handleDownload} className="bg-indigo-600 text-white px-4 py-2 rounded">
+        Download
+      </button>
     </div>
-  );
+  </div>
+);
 }
 
 export default NFTDisplay;
