@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 interface NFTDisplayProps {
   selectedTraits: Record<string, string>;
@@ -81,6 +81,7 @@ let offScreenCtx: CanvasRenderingContext2D | null = null;
 
 const handleGenerate = async () => {
   console.log('Generating NFT...');
+  setIsLoading(true); // Start loading
   if (canvasRef.current) {
       const ctx = canvasRef.current.getContext('2d');
 
@@ -119,23 +120,30 @@ const handleGenerate = async () => {
               ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
               ctx.drawImage(offScreenCanvas, 0, 0, 400, 400); // Scale down for display
           }
+
+          setIsLoading(false); // Stop loading
       }
   }
 };
 
+const [isLoading, setIsLoading] = useState(false);
 
 return (
   <div className="flex flex-col items-center space-y-4">
-    <canvas ref={canvasRef} width={400} height={400} className="border transform scale-75 sm:scale-100"></canvas>
-    <div className="flex space-x-4">
-      <button onClick={handleGenerate} className="bg-blue-600 text-white px-4 py-2 rounded">
-        Generate
-      </button>
-      <button onClick={handleDownload} className="bg-indigo-600 text-white px-4 py-2 rounded">
-        Download
-      </button>
-    </div>
+  <canvas ref={canvasRef} width={400} height={400} className="border transform scale-75 sm:scale-100"></canvas>
+  <div className="flex space-x-4">
+    <button 
+      onClick={handleGenerate} 
+      className="bg-blue-600 text-white px-4 py-2 rounded" 
+      disabled={isLoading} // Disable the button when loading
+    >
+      {isLoading ? <span className="animate-spin inline-block h-5 w-5 border-t-2 border-white rounded-full"></span> : "Generate"}
+    </button>
+    <button onClick={handleDownload} className="bg-indigo-600 text-white px-4 py-2 rounded">
+      Download
+    </button>
   </div>
+</div>
 );
 }
 
