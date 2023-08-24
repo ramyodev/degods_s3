@@ -138,6 +138,7 @@ return (
     >
       {isLoading ? <span className="animate-spin inline-block h-5 w-5 border-t-2 border-white rounded-full"></span> : "Generate"}
     </button>
+
     <button onClick={handleDownload} className="bg-indigo-600 text-white px-4 py-2 rounded">
       Download
     </button>

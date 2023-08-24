@@ -9,7 +9,7 @@ export const traits: TraitCategory = {
     neck: ["none", "christmas_lights_chain", "cannibal_necklace", "solana_chain", "friendship_necklace", "diamond_necklace", "double_diamond_necklace", "mythic_mamba", "silver_chain", "pimp_chain", "paperclip_necklace", "gold_chain", "louis_scarf"],
     skin: ["none", "nebula", "leopard", "pastel", "transcendent", "x-ray", "poker", "ape", "zebra", "joker", "ice", "turquoise", "blue_sky", "zombie", "pink_granite", "radioactive", "marble", "lavender_stripe", "solar_spiral", "gold", "navi", "acid"],
     specialty: ["none", "earring", "quarterback", "forehead_diamond", "devil_wings", "mythic_wings", "black_eye", "archer", "angel_wings", "god_of_war", "rockstar_tats"],
-    background: ["none", "teal", "alaska", "hell", "supernova", "blue", "olive_green", "deep_ocean_blue", "brown", "heaven", "red", "purple"],
+    background: ["none", "teal", "alaska", "hell", "supernova", "blue", "olive_green", "deep_ocean_blue", "brown", "heaven", "red", "purple", "BTC_default", "BTC_alaska", "BTC_heaven", "BTC_supernova", "BTC_hell"],
     clothes: ["none", "overalls", "world_champion_robe", "mickey_degods_uniform", "ftx_jersey", "tracksuit", "top_god_jumper", "god_scout_uniform", "tattered_tee", "bloody_beater", "god_beater", "dedoctor_coat", "gym_tee", "silk_robe", "caesar_tunic", "googod_tee", "bleached_tee", "mythic_war_armor",  "war_armor", "godly_tunic", "hawaiian_shirt", "tech_god_vest", "godchella_hoodie", "divine_robe", "druglord_suit", "peasant_blouse", "tourist_tee", "steve_jobs_turtleneck", "degod_cutoff", "hazmat_suit", "radioactive_tee", "jean_jacket", "god_jersey"],
 };
   
